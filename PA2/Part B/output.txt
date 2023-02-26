@@ -1,0 +1,372 @@
+[EntityA] seqnum_limit: 16, window_size: 8.
+
+SIMULATION CONFIGURATION
+--------------------------------------
+(-n) # layer5 msgs to be provided:      22
+(-d) avg layer5 msg interarrival time:  10.0
+(-z) transport protocol seqnum limit:   16
+(-l) layer3 packet loss prob:           0.05
+(-c) layer3 packet corruption prob:     0.05
+(-s) simulation random seed:            1650437689597317038
+--------------------------------------
+
+===== SIMULATION BEGINS
+[EntityA][3.8862225391730765] Added message to buffer. Msg(data=b'aaaaaaaaaaaaaaaaaaaa')
+
+[EntityA][3.8862225391730765] Sent message: Pkt(seqnum=0, acknum=15, checksum=1955, payload=b'aaaaaaaaaaaaaaaaaaaa')
+
+[EntityA][3.8862225391730765] The window has moved. Reset timer for 39.
+
+[EntityA][9.417562647382736] Added message to buffer. Msg(data=b'bbbbbbbbbbbbbbbbbbbb')
+
+[EntityA][9.417562647382736] Sent message: Pkt(seqnum=1, acknum=0, checksum=1961, payload=b'bbbbbbbbbbbbbbbbbbbb')
+
+[EntityA][12.16091084800074] Added message to buffer. Msg(data=b'cccccccccccccccccccc')
+
+[EntityA][12.16091084800074] Sent message: Pkt(seqnum=2, acknum=1, checksum=1983, payload=b'cccccccccccccccccccc')
+
+[EntityB][12.718264810819498] Received something... Hopefully its good..
+
+[EntityB][12.718264810819498] Delivered message with ACK 0 to layer 5. Msg(data=b'aaaaaaaaaaaaaaaaaaaa')
+
+          TO_LAYER3: packet being lost
+[EntityB][12.718264810819498] Sent ACK to layer 3: Pkt(seqnum=1, acknum=0, checksum=1941, payload=b'aaaaaaaaaaaaaaaaaaaa')
+
+[EntityB][15.637772985767885] Received something... Hopefully its good..
+
+[EntityB][15.637772985767885] Delivered message with ACK 1 to layer 5. Msg(data=b'bbbbbbbbbbbbbbbbbbbb')
+
+[EntityB][15.637772985767885] Sent ACK to layer 3: Pkt(seqnum=2, acknum=1, checksum=1963, payload=b'bbbbbbbbbbbbbbbbbbbb')
+
+[EntityA][19.020565867773193] The window has moved. Reset timer for 39.
+
+[EntityA][19.020565867773193] Received ACKnum 1 for message b'bbbbbbbbbbbbbbbbbbbb'
+
+[EntityA][19.020565867773193] No more packets are currently waiting to be sent.
+
+[EntityB][21.162274779314842] Received something... Hopefully its good..
+
+[EntityB][21.162274779314842] Delivered message with ACK 2 to layer 5. Msg(data=b'cccccccccccccccccccc')
+
+[EntityB][21.162274779314842] Sent ACK to layer 3: Pkt(seqnum=3, acknum=2, checksum=1985, payload=b'cccccccccccccccccccc')
+
+[EntityA][26.445956903692903] Received ACKnum 2 for message b'cccccccccccccccccccc'
+
+[EntityA][26.445956903692903] No more packets are currently waiting to be sent.
+
+[EntityA][27.1051146909444] Added message to buffer. Msg(data=b'dddddddddddddddddddd')
+
+[EntityA][27.1051146909444] Sent message: Pkt(seqnum=3, acknum=2, checksum=2005, payload=b'dddddddddddddddddddd')
+
+[EntityA][27.1051146909444] The window has moved. Reset timer for 39.
+
+[EntityB][29.590162003984357] Received something... Hopefully its good..
+
+[EntityB][29.590162003984357] Delivered message with ACK 3 to layer 5. Msg(data=b'dddddddddddddddddddd')
+
+[EntityB][29.590162003984357] Sent ACK to layer 3: Pkt(seqnum=4, acknum=3, checksum=2007, payload=b'dddddddddddddddddddd')
+
+[EntityA][33.43201649252455] Received ACKnum 3 for message b'dddddddddddddddddddd'
+
+[EntityA][33.43201649252455] No more packets are currently waiting to be sent.
+
+[EntityA][40.45226060334103] Added message to buffer. Msg(data=b'eeeeeeeeeeeeeeeeeeee')
+
+          TO_LAYER3: packet being lost
+[EntityA][40.45226060334103] Sent message: Pkt(seqnum=4, acknum=3, checksum=2027, payload=b'eeeeeeeeeeeeeeeeeeee')
+
+[EntityA][40.45226060334103] The window has moved. Reset timer for 39.
+
+[EntityA][58.71802189763807] Added message to buffer. Msg(data=b'ffffffffffffffffffff')
+
+[EntityA][58.71802189763807] Sent message: Pkt(seqnum=5, acknum=4, checksum=2049, payload=b'ffffffffffffffffffff')
+
+[EntityB][62.61454689402241] Received something... Hopefully its good..
+
+[EntityB][62.61454689402241] Received the wrong sequence of packet. Expected: 4. Received: 5. Resending ACK...
+
+[EntityB][62.61454689402241] Sent ACK to layer 3: Pkt(seqnum=4, acknum=3, checksum=2047, payload=b'ffffffffffffffffffff')
+
+[EntityA][71.01245296312698] Added message to buffer. Msg(data=b'gggggggggggggggggggg')
+
+[EntityA][71.01245296312698] Sent message: Pkt(seqnum=6, acknum=5, checksum=2071, payload=b'gggggggggggggggggggg')
+
+[EntityA][71.28547221834538] Received the ACK for a previous packet. Expected: 4. Received: 3.
+
+[EntityB][78.0722728234881] Received something... Hopefully its good..
+
+[EntityB][78.0722728234881] Received the wrong sequence of packet. Expected: 4. Received: 6. Resending ACK...
+
+[EntityB][78.0722728234881] Sent ACK to layer 3: Pkt(seqnum=4, acknum=3, checksum=2067, payload=b'gggggggggggggggggggg')
+
+[EntityA][79.16739373017427] Received the ACK for a previous packet. Expected: 4. Received: 3.
+
+[EntityA][79.45226060334103] Timed out!
+
+[EntityA][79.45226060334103] Sent message: Pkt(seqnum=4, acknum=3, checksum=2027, payload=b'eeeeeeeeeeeeeeeeeeee')
+
+[EntityA][79.45226060334103] Sent message: Pkt(seqnum=5, acknum=4, checksum=2049, payload=b'ffffffffffffffffffff')
+
+[EntityA][79.45226060334103] Sent message: Pkt(seqnum=6, acknum=5, checksum=2071, payload=b'gggggggggggggggggggg')
+
+[EntityA][82.99678861851909] Added message to buffer. Msg(data=b'hhhhhhhhhhhhhhhhhhhh')
+
+[EntityA][82.99678861851909] Sent message: Pkt(seqnum=7, acknum=6, checksum=2093, payload=b'hhhhhhhhhhhhhhhhhhhh')
+
+[EntityB][85.30431321376265] Received something... Hopefully its good..
+
+[EntityB][85.30431321376265] Delivered message with ACK 4 to layer 5. Msg(data=b'eeeeeeeeeeeeeeeeeeee')
+
+[EntityB][85.30431321376265] Sent ACK to layer 3: Pkt(seqnum=5, acknum=4, checksum=2029, payload=b'eeeeeeeeeeeeeeeeeeee')
+
+[EntityA][87.37310148209716] The window has moved. Reset timer for 39.
+
+[EntityA][87.37310148209716] Received ACKnum 4 for message b'eeeeeeeeeeeeeeeeeeee'
+
+[EntityA][87.37310148209716] No more packets are currently waiting to be sent.
+
+[EntityB][92.78093193380764] Received something... Hopefully its good..
+
+[EntityB][92.78093193380764] Delivered message with ACK 5 to layer 5. Msg(data=b'ffffffffffffffffffff')
+
+          TO_LAYER3: packet being corrupted
+[EntityB][92.78093193380764] Sent ACK to layer 3: Pkt(seqnum=6, acknum=5, checksum=2051, payload=b'ffffffffffffffffffff')
+
+[EntityA][94.77183941995166] Added message to buffer. Msg(data=b'iiiiiiiiiiiiiiiiiiii')
+
+[EntityA][94.77183941995166] Sent message: Pkt(seqnum=8, acknum=7, checksum=2115, payload=b'iiiiiiiiiiiiiiiiiiii')
+
+[EntityA][95.1960691733115] Received a corrupted/invalid packet.
+
+[EntityA][99.89809211326893] Added message to buffer. Msg(data=b'jjjjjjjjjjjjjjjjjjjj')
+
+[EntityA][99.89809211326893] Sent message: Pkt(seqnum=9, acknum=8, checksum=2137, payload=b'jjjjjjjjjjjjjjjjjjjj')
+
+[EntityB][100.0524464541362] Received something... Hopefully its good..
+
+[EntityB][100.0524464541362] Delivered message with ACK 6 to layer 5. Msg(data=b'gggggggggggggggggggg')
+
+[EntityB][100.0524464541362] Sent ACK to layer 3: Pkt(seqnum=7, acknum=6, checksum=2073, payload=b'gggggggggggggggggggg')
+
+[EntityA][100.29812946373993] Added message to buffer. Msg(data=b'kkkkkkkkkkkkkkkkkkkk')
+
+[EntityA][100.29812946373993] Sent message: Pkt(seqnum=10, acknum=9, checksum=2159, payload=b'kkkkkkkkkkkkkkkkkkkk')
+
+[EntityB][103.10272958183245] Received something... Hopefully its good..
+
+[EntityB][103.10272958183245] Delivered message with ACK 7 to layer 5. Msg(data=b'hhhhhhhhhhhhhhhhhhhh')
+
+[EntityB][103.10272958183245] Sent ACK to layer 3: Pkt(seqnum=8, acknum=7, checksum=2095, payload=b'hhhhhhhhhhhhhhhhhhhh')
+
+[EntityA][104.71311094254823] The window has moved. Reset timer for 39.
+
+[EntityA][104.71311094254823] Received ACKnum 6 for message b'gggggggggggggggggggg'
+
+[EntityA][104.71311094254823] No more packets are currently waiting to be sent.
+
+[EntityA][105.44929523120264] Added message to buffer. Msg(data=b'llllllllllllllllllll')
+
+[EntityA][105.44929523120264] Sent message: Pkt(seqnum=11, acknum=10, checksum=2181, payload=b'llllllllllllllllllll')
+
+[EntityA][109.31110399024098] The window has moved. Reset timer for 39.
+
+[EntityA][109.31110399024098] Received ACKnum 7 for message b'hhhhhhhhhhhhhhhhhhhh'
+
+[EntityA][109.31110399024098] No more packets are currently waiting to be sent.
+
+[EntityB][110.1368824609374] Received something... Hopefully its good..
+
+[EntityB][110.1368824609374] Delivered message with ACK 8 to layer 5. Msg(data=b'iiiiiiiiiiiiiiiiiiii')
+
+[EntityB][110.1368824609374] Sent ACK to layer 3: Pkt(seqnum=9, acknum=8, checksum=2117, payload=b'iiiiiiiiiiiiiiiiiiii')
+
+[EntityB][111.79833305347562] Received something... Hopefully its good..
+
+[EntityB][111.79833305347562] Delivered message with ACK 9 to layer 5. Msg(data=b'jjjjjjjjjjjjjjjjjjjj')
+
+[EntityB][111.79833305347562] Sent ACK to layer 3: Pkt(seqnum=10, acknum=9, checksum=2139, payload=b'jjjjjjjjjjjjjjjjjjjj')
+
+[EntityA][112.2261403098661] The window has moved. Reset timer for 39.
+
+[EntityA][112.2261403098661] Received ACKnum 8 for message b'iiiiiiiiiiiiiiiiiiii'
+
+[EntityA][112.2261403098661] No more packets are currently waiting to be sent.
+
+[EntityA][116.63354925936513] The window has moved. Reset timer for 39.
+
+[EntityA][116.63354925936513] Received ACKnum 9 for message b'jjjjjjjjjjjjjjjjjjjj'
+
+[EntityA][116.63354925936513] No more packets are currently waiting to be sent.
+
+[EntityA][119.47738311292333] Added message to buffer. Msg(data=b'mmmmmmmmmmmmmmmmmmmm')
+
+[EntityA][119.47738311292333] Sent message: Pkt(seqnum=12, acknum=11, checksum=2203, payload=b'mmmmmmmmmmmmmmmmmmmm')
+
+[EntityB][120.7386353394445] Received something... Hopefully its good..
+
+[EntityB][120.7386353394445] Delivered message with ACK 10 to layer 5. Msg(data=b'kkkkkkkkkkkkkkkkkkkk')
+
+[EntityB][120.7386353394445] Sent ACK to layer 3: Pkt(seqnum=11, acknum=10, checksum=2161, payload=b'kkkkkkkkkkkkkkkkkkkk')
+
+[EntityA][121.74137419028203] The window has moved. Reset timer for 39.
+
+[EntityA][121.74137419028203] Received ACKnum 10 for message b'kkkkkkkkkkkkkkkkkkkk'
+
+[EntityA][121.74137419028203] No more packets are currently waiting to be sent.
+
+[EntityA][122.34786826632661] Added message to buffer. Msg(data=b'nnnnnnnnnnnnnnnnnnnn')
+
+[EntityA][122.34786826632661] Sent message: Pkt(seqnum=13, acknum=12, checksum=2225, payload=b'nnnnnnnnnnnnnnnnnnnn')
+
+[EntityB][125.0431905392216] Received something... Hopefully its good..
+
+[EntityB][125.0431905392216] Delivered message with ACK 11 to layer 5. Msg(data=b'llllllllllllllllllll')
+
+[EntityB][125.0431905392216] Sent ACK to layer 3: Pkt(seqnum=12, acknum=11, checksum=2183, payload=b'llllllllllllllllllll')
+
+[EntityB][126.49225983477046] Received something... Hopefully its good..
+
+[EntityB][126.49225983477046] Delivered message with ACK 12 to layer 5. Msg(data=b'mmmmmmmmmmmmmmmmmmmm')
+
+[EntityB][126.49225983477046] Sent ACK to layer 3: Pkt(seqnum=13, acknum=12, checksum=2205, payload=b'mmmmmmmmmmmmmmmmmmmm')
+
+[EntityB][131.6170673369239] Received something... Hopefully its good..
+
+[EntityB][131.6170673369239] Delivered message with ACK 13 to layer 5. Msg(data=b'nnnnnnnnnnnnnnnnnnnn')
+
+[EntityB][131.6170673369239] Sent ACK to layer 3: Pkt(seqnum=14, acknum=13, checksum=2227, payload=b'nnnnnnnnnnnnnnnnnnnn')
+
+[EntityA][133.75379913530776] The window has moved. Reset timer for 39.
+
+[EntityA][133.75379913530776] Received ACKnum 11 for message b'llllllllllllllllllll'
+
+[EntityA][133.75379913530776] No more packets are currently waiting to be sent.
+
+[EntityA][135.57825444651922] Added message to buffer. Msg(data=b'oooooooooooooooooooo')
+
+[EntityA][135.57825444651922] Sent message: Pkt(seqnum=14, acknum=13, checksum=2247, payload=b'oooooooooooooooooooo')
+
+[EntityA][140.45182000124868] The window has moved. Reset timer for 39.
+
+[EntityA][140.45182000124868] Received ACKnum 12 for message b'mmmmmmmmmmmmmmmmmmmm'
+
+[EntityA][140.45182000124868] No more packets are currently waiting to be sent.
+
+[EntityB][142.07318393468802] Received something... Hopefully its good..
+
+[EntityB][142.07318393468802] Delivered message with ACK 14 to layer 5. Msg(data=b'oooooooooooooooooooo')
+
+[EntityB][142.07318393468802] Sent ACK to layer 3: Pkt(seqnum=15, acknum=14, checksum=2249, payload=b'oooooooooooooooooooo')
+
+[EntityA][142.1134237495042] The window has moved. Reset timer for 39.
+
+[EntityA][142.1134237495042] Received ACKnum 13 for message b'nnnnnnnnnnnnnnnnnnnn'
+
+[EntityA][142.1134237495042] No more packets are currently waiting to be sent.
+
+[EntityA][149.00872726370787] Added message to buffer. Msg(data=b'pppppppppppppppppppp')
+
+[EntityA][149.00872726370787] Sent message: Pkt(seqnum=15, acknum=14, checksum=2269, payload=b'pppppppppppppppppppp')
+
+[EntityA][150.37735125287932] The window has moved. Reset timer for 39.
+
+[EntityA][150.37735125287932] Received ACKnum 14 for message b'oooooooooooooooooooo'
+
+[EntityA][150.37735125287932] No more packets are currently waiting to be sent.
+
+[EntityB][153.07446014068225] Received something... Hopefully its good..
+
+[EntityB][153.07446014068225] Delivered message with ACK 15 to layer 5. Msg(data=b'pppppppppppppppppppp')
+
+[EntityB][153.07446014068225] Sent ACK to layer 3: Pkt(seqnum=0, acknum=15, checksum=2255, payload=b'pppppppppppppppppppp')
+
+[EntityA][153.8510834816994] Added message to buffer. Msg(data=b'qqqqqqqqqqqqqqqqqqqq')
+
+[EntityA][153.8510834816994] Sent message: Pkt(seqnum=0, acknum=15, checksum=2275, payload=b'qqqqqqqqqqqqqqqqqqqq')
+
+[EntityB][160.44392951323394] Received something... Hopefully its good..
+
+[EntityB][160.44392951323394] Delivered message with ACK 0 to layer 5. Msg(data=b'qqqqqqqqqqqqqqqqqqqq')
+
+[EntityB][160.44392951323394] Sent ACK to layer 3: Pkt(seqnum=1, acknum=0, checksum=2261, payload=b'qqqqqqqqqqqqqqqqqqqq')
+
+[EntityA][160.44651216026972] The window has moved. Reset timer for 39.
+
+[EntityA][160.44651216026972] Received ACKnum 15 for message b'pppppppppppppppppppp'
+
+[EntityA][160.44651216026972] No more packets are currently waiting to be sent.
+
+[EntityA][165.17076718711672] Received ACKnum 0 for message b'qqqqqqqqqqqqqqqqqqqq'
+
+[EntityA][165.17076718711672] No more packets are currently waiting to be sent.
+
+[EntityA][169.32944265733062] Added message to buffer. Msg(data=b'rrrrrrrrrrrrrrrrrrrr')
+
+[EntityA][169.32944265733062] Sent message: Pkt(seqnum=1, acknum=0, checksum=2281, payload=b'rrrrrrrrrrrrrrrrrrrr')
+
+[EntityA][169.32944265733062] The window has moved. Reset timer for 39.
+
+[EntityB][174.1346788412523] Received something... Hopefully its good..
+
+[EntityB][174.1346788412523] Delivered message with ACK 1 to layer 5. Msg(data=b'rrrrrrrrrrrrrrrrrrrr')
+
+[EntityB][174.1346788412523] Sent ACK to layer 3: Pkt(seqnum=2, acknum=1, checksum=2283, payload=b'rrrrrrrrrrrrrrrrrrrr')
+
+[EntityA][181.6719458933066] Received ACKnum 1 for message b'rrrrrrrrrrrrrrrrrrrr'
+
+[EntityA][181.6719458933066] No more packets are currently waiting to be sent.
+
+[EntityA][187.77585912290766] Added message to buffer. Msg(data=b'ssssssssssssssssssss')
+
+[EntityA][187.77585912290766] Sent message: Pkt(seqnum=2, acknum=1, checksum=2303, payload=b'ssssssssssssssssssss')
+
+[EntityA][187.77585912290766] The window has moved. Reset timer for 39.
+
+[EntityB][194.48729225240524] Received something... Hopefully its good..
+
+[EntityB][194.48729225240524] Delivered message with ACK 2 to layer 5. Msg(data=b'ssssssssssssssssssss')
+
+          TO_LAYER3: packet being corrupted
+[EntityB][194.48729225240524] Sent ACK to layer 3: Pkt(seqnum=3, acknum=2, checksum=2305, payload=b'ssssssssssssssssssss')
+
+[EntityA][199.22456817020378] Received a corrupted/invalid packet.
+
+[EntityA][200.6464006766682] Added message to buffer. Msg(data=b'tttttttttttttttttttt')
+
+[EntityA][200.6464006766682] Sent message: Pkt(seqnum=3, acknum=2, checksum=2325, payload=b'tttttttttttttttttttt')
+
+[EntityB][206.94087041005122] Received something... Hopefully its good..
+
+[EntityB][206.94087041005122] Delivered message with ACK 3 to layer 5. Msg(data=b'tttttttttttttttttttt')
+
+[EntityB][206.94087041005122] Sent ACK to layer 3: Pkt(seqnum=4, acknum=3, checksum=2327, payload=b'tttttttttttttttttttt')
+
+[EntityA][211.6267065724875] Received ACKnum 3 for message b'tttttttttttttttttttt'
+
+[EntityA][211.6267065724875] No more packets are currently waiting to be sent.
+
+[EntityA][219.8018729899456] Added message to buffer. Msg(data=b'uuuuuuuuuuuuuuuuuuuu')
+
+[EntityA][219.8018729899456] Sent message: Pkt(seqnum=4, acknum=3, checksum=2347, payload=b'uuuuuuuuuuuuuuuuuuuu')
+
+[EntityA][219.8018729899456] The window has moved. Reset timer for 39.
+
+[EntityA][223.38473474751657] Added message to buffer. Msg(data=b'vvvvvvvvvvvvvvvvvvvv')
+
+[EntityA][223.38473474751657] Sent message: Pkt(seqnum=5, acknum=4, checksum=2369, payload=b'vvvvvvvvvvvvvvvvvvvv')
+
+===== SIMULATION ENDS
+
+SIMULATION SUMMARY
+--------------------------------
+# layer5 msgs provided to A:      22
+# elapsed time units:             223.38473474751657
+
+# layer3 packets sent by A:       25
+# layer3 packets sent by B:       22
+# layer3 packets lost:            2
+# layer3 packets corrupted:       2
+# layer5 msgs delivered by A:     0
+# layer5 msgs delivered by B:     20
+# layer5 msgs by B/elapsed time:  0.08953163260061281
+--------------------------------
